@@ -1,0 +1,53 @@
+:root {
+  --color-text: #ffffff;
+  --color-secondaryText: #94a3b8;
+  --background-primary: #00d1ff;
+  --background-secondary: #0b0e14;
+  --background-tertiary: #1e293b;
+  --background-gradient: linear-gradient(
+    to right,
+    var(--background-primary),
+    var(--accent)
+  );
+  --blur-25: blur(25px);
+  --blur-200: blur(200px);
+  --shadow-default: 0px 4px 12px rgba(0, 0, 0, 0.25);
+  --radius-default: 8px;
+  --radius-full: 9999px;
+  --accent: #6366f1;
+  --typography-fontFamily: "Inter", sans-serif;
+  --typography-fontWeight-regular: 400;
+  --typography-fontWeight-medium: 500;
+  --typography-fontWeight-semiBold: 600;
+  --typography-fontWeight-bold: 700;
+  --typography-fontSize-title: "64px";
+  --typography-fontSize-subtitle: "40px";
+  --typography-fontSize-caption: "24px";
+  --typography-fontSize-body: "18px";
+  --typography-fontSize-md: "16px";
+  --typography-fontSize-sm: "14px";
+  --typography-fontSize-xs: "12px";
+  --typography-fontSize-xxs: "10px";
+  --typography-letterSpacing: "-2%";
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--typography-fontFamily);
+  background: var(--background-secondary);
+}
+
+.blur-element {
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  background: var(--background-tertiary);
+  border-radius: var(--radius-full);
+  filter: var(--blur-200);
+  z-index: -1;
+}
