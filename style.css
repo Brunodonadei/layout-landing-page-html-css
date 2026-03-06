@@ -40,6 +40,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--typography-fontFamily);
   background: var(--background-secondary);
@@ -49,6 +53,12 @@ header {
   background: rgba(11, 14, 20, 0.7);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(40px) saturate(150%);
+  position: sticky;
+  top: 0;
+}
+
+section {
+  scroll-margin-top: 150px;
 }
 
 button {
@@ -60,6 +70,32 @@ button {
 a {
   text-decoration: none;
   color: var(--color-text);
+}
+
+.animated-link {
+  position: relative;
+  font-size: 0.9rem;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.animated-link:hover {
+  opacity: 1;
+}
+
+.animated-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s ease;
+}
+
+.animated-link:hover::after {
+  width: 100%;
 }
 
 .blur-element {
@@ -81,7 +117,11 @@ nav.nav-section {
   justify-content: space-between;
   max-width: var(--container-width);
   margin: 0 auto;
-  padding: 24px 0;
+  padding: 14px 0;
+}
+
+.nav-section svg {
+  width: 200px;
 }
 
 .nav-section ul {

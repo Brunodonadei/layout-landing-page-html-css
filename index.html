@@ -16,16 +16,16 @@
     <div class="blur-element"></div>
     <header>
       <nav class="nav-section">
-        <h2>Logo Empresa</h2>
+        <div id="logo"></div>
         <ul>
-          <li><a href="#">Section 1</a></li>
-          <li><a href="#">Section 2</a></li>
+          <li><a class="animated-link" href="#about">Sobre a empresa</a></li>
+          <li><a class="animated-link" href="#projects">Serviços</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section class="hero-section">
+      <section class="hero-section" id="about">
         <span>Liderando a transformação digital</span>
         <h2>Engenharia de software que escala o seu futuro.</h2>
         <p>
@@ -35,7 +35,7 @@
         <button>Iniciar Projeto</button>
       </section>
 
-      <section class="projects-section">
+      <section class="projects-section" id="projects">
         <div class="projects-title">
           <h3>Soluções de ponta para desafios complexos.</h3>
           <span>
@@ -83,7 +83,15 @@
     </main>
 
     <footer class="footer">
-      <span>© 2026 — Digital Studio. Todos os direitos reservados.</span>
+      <span>© 2026 — NexVara Intelligence Engineered.</span>
     </footer>
+
+    <script>
+      fetch("assets/images/logo4.svg")
+        .then((r) => r.text())
+        .then((svg) => {
+          document.querySelector("#logo").innerHTML = svg;
+        });
+    </script>
   </body>
 </html>
