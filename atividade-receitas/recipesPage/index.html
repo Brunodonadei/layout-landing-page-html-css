@@ -24,7 +24,7 @@
         const urlParams = new URLSearchParams(window.location.search);
         const slug = urlParams.get("slug");
 
-        const res = await fetch("atividade-receitas/db/recipes.json");
+        const res = await fetch("../db/recipes.json");
         const recipes = await res.json();
 
         const recipe = recipes.find((r) => r.slug === slug);
