@@ -1,0 +1,312 @@
+[
+  {
+    "id": 1,
+    "slug": "bolo-de-cenoura-fofinho",
+    "recipeTitle": "Bolo de Cenoura Fofinho",
+    "recipeSubtitle": "Super macio, leve e com cobertura cremosa de chocolate.",
+    "img": "bolo-cenoura-fofinho.jpg",
+    "ingredients": [
+      {
+        "group": "Massa",
+        "ingredients": [
+          "3 cenouras médias raladas",
+          "4 ovos",
+          "1 xícara de óleo",
+          "2 xícaras de açúcar",
+          "2 e 1/2 xícaras de farinha de trigo peneirada",
+          "1 colher (sopa) de fermento em pó",
+          "1 pitada de sal"
+        ]
+      },
+      {
+        "group": "Cobertura",
+        "ingredients": [
+          "1 caixa de creme de leite",
+          "4 colheres (sopa) de chocolate em pó",
+          "3 colheres (sopa) de açúcar",
+          "1 colher (sopa) de manteiga"
+        ]
+      }
+    ],
+    "preparation": [
+      "Preaqueça o forno a 180°C e unte uma forma com manteiga e farinha.",
+      "No liquidificador, bata a cenoura, os ovos e o óleo até formar um creme liso.",
+      "Em uma tigela, misture o açúcar, o sal e a farinha peneirada.",
+      "Adicione a mistura do liquidificador e mexa delicadamente.",
+      "Incorpore o fermento por último, mexendo suavemente.",
+      "Despeje na forma e asse por 35 a 45 minutos.",
+      "Para a cobertura, misture todos os ingredientes e leve ao fogo até engrossar.",
+      "Espalhe sobre o bolo ainda morno."
+    ],
+    "tips": [
+      "Peneire a farinha para deixar a massa mais leve.",
+      "Não bata o fermento no liquidificador.",
+      "Evite abrir o forno antes de 30 minutos."
+    ]
+  },
+  {
+    "id": 2,
+    "slug": "bolo-de-cenoura",
+    "recipeTitle": "Bolo de Cenoura",
+    "recipeSubtitle": "Receita clássica, fofinha e com cobertura de chocolate.",
+    "img": "bolo-cenoura.webp",
+    "ingredients": [
+      {
+        "group": "Massa",
+        "ingredients": [
+          "3 cenouras médias picadas",
+          "3 ovos",
+          "1 xícara de óleo",
+          "2 xícaras de açúcar",
+          "2 e 1/2 xícaras de farinha de trigo",
+          "1 colher (sopa) de fermento em pó"
+        ]
+      },
+      {
+        "group": "Cobertura",
+        "ingredients": [
+          "1 colher (sopa) de manteiga",
+          "3 colheres (sopa) de chocolate em pó",
+          "1 xícara de açúcar",
+          "1/2 xícara de leite"
+        ]
+      }
+    ],
+    "preparation": [
+      "Preaqueça o forno a 180°C e unte uma forma com manteiga e farinha.",
+      "No liquidificador, bata a cenoura, os ovos e o óleo até ficar homogêneo.",
+      "Em uma tigela, misture o açúcar e a farinha.",
+      "Adicione a mistura do liquidificador e mexa bem.",
+      "Acrescente o fermento e misture delicadamente.",
+      "Despeje na forma e leve ao forno por cerca de 40 minutos.",
+      "Para a cobertura, leve todos os ingredientes ao fogo médio até engrossar.",
+      "Despeje a cobertura ainda quente sobre o bolo."
+    ],
+    "tips": []
+  },
+  {
+    "id": 3,
+    "slug": "bolo-de-chocolate-simples",
+    "recipeTitle": "Bolo de Chocolate Simples",
+    "recipeSubtitle": "Receita fácil, rápida e perfeita para o café da tarde.",
+    "img": "bolo-chocolate-simples.webp",
+    "ingredients": [
+      {
+        "group": "Massa",
+        "ingredients": [
+          "3 ovos",
+          "1 xícara de açúcar",
+          "1/2 xícara de óleo",
+          "1 xícara de leite",
+          "1 xícara de chocolate em pó",
+          "2 xícaras de farinha de trigo",
+          "1 colher (sopa) de fermento em pó"
+        ]
+      },
+      {
+        "group": "Cobertura (opcional)",
+        "ingredients": [
+          "1 colher (sopa) de manteiga",
+          "3 colheres (sopa) de chocolate em pó",
+          "1/2 xícara de leite",
+          "4 colheres (sopa) de açúcar"
+        ]
+      }
+    ],
+    "preparation": [
+      "Preaqueça o forno a 180°C e unte uma forma.",
+      "Em uma tigela, misture os ovos, o açúcar e o óleo.",
+      "Adicione o leite e o chocolate em pó, mexendo bem.",
+      "Acrescente a farinha de trigo aos poucos.",
+      "Por último, misture o fermento delicadamente.",
+      "Despeje a massa na forma e leve ao forno por 35 a 40 minutos.",
+      "Para a cobertura, leve os ingredientes ao fogo até engrossar.",
+      "Despeje sobre o bolo ainda quente."
+    ],
+    "tips": [
+      "Use chocolate 50% para sabor mais intenso.",
+      "Não misture demais após adicionar o fermento.",
+      "Faça o teste do palito antes de retirar do forno."
+    ]
+  },
+  {
+    "id": 4,
+    "slug": "bolo-de-chocolate-de-liquidificador",
+    "recipeTitle": "Bolo de Chocolate de Liquidificador",
+    "recipeSubtitle": "Prático e rápido, perfeito para quem quer um bolo delicioso sem complicação.",
+    "img": "bolo-de-chocolate-de-liquidificador.webp",
+    "ingredients": [
+      {
+        "group": "Massa",
+        "ingredients": [
+          "3 ovos",
+          "1/2 xícara de óleo",
+          "1 xícara de leite",
+          "1 xícara de açúcar",
+          "1 xícara de chocolate em pó",
+          "2 xícaras de farinha de trigo",
+          "1 colher (sopa) de fermento em pó"
+        ]
+      },
+      {
+        "group": "Cobertura (opcional)",
+        "ingredients": [
+          "2 colheres (sopa) de manteiga",
+          "3 colheres (sopa) de chocolate em pó",
+          "1/2 xícara de leite",
+          "3 colheres (sopa) de açúcar"
+        ]
+      }
+    ],
+    "preparation": [
+      "Preaqueça o forno a 180°C e unte uma forma com manteiga e farinha.",
+      "No liquidificador, bata os ovos, óleo, leite, açúcar e chocolate em pó até ficar homogêneo.",
+      "Despeje a mistura em uma tigela e adicione a farinha de trigo aos poucos, mexendo delicadamente.",
+      "Por último, incorpore o fermento com cuidado.",
+      "Coloque a massa na forma e leve ao forno por 35 a 40 minutos.",
+      "Para a cobertura, leve todos os ingredientes ao fogo médio, mexendo até engrossar.",
+      "Despeje a cobertura sobre o bolo ainda morno."
+    ],
+    "tips": [
+      "Não bata a farinha junto com o fermento no liquidificador.",
+      "Para bolo mais fofinho, peneire a farinha antes de adicionar.",
+      "Faça o teste do palito antes de retirar do forno."
+    ]
+  },
+  {
+    "id": 5,
+    "slug": "brownie-de-caneca",
+    "recipeTitle": "Brownie de Caneca",
+    "recipeSubtitle": "Rápido, delicioso e pronto em minutos direto no micro-ondas.",
+    "img": "brownie-caneca.jpg",
+    "ingredients": [
+      {
+        "group": "Ingredientes",
+        "ingredients": [
+          "3 colheres (sopa) de chocolate em pó",
+          "2 colheres (sopa) de farinha de trigo",
+          "2 colheres (sopa) de açúcar",
+          "1 ovo",
+          "2 colheres (sopa) de óleo",
+          "1 colher (sopa) de leite",
+          "Opcional: gotas de chocolate"
+        ]
+      }
+    ],
+    "preparation": [
+      "Em uma caneca grande, misture o ovo com o açúcar e o óleo.",
+      "Acrescente o chocolate em pó e a farinha, misturando bem.",
+      "Adicione o leite e, se desejar, gotas de chocolate.",
+      "Leve ao micro-ondas por 1 minuto e 30 segundos (dependendo da potência).",
+      "Verifique se o brownie está firme; caso contrário, aqueça mais alguns segundos.",
+      "Deixe esfriar um pouco antes de comer."
+    ],
+    "tips": [
+      "Use caneca grande para evitar transbordar.",
+      "Não cozinhe demais para não ressecar o brownie.",
+      "Pode adicionar castanhas ou chocolate extra por cima."
+    ]
+  },
+  {
+    "id": 6,
+    "slug": "brownie-de-chocolate-na-air-fryer",
+    "recipeTitle": "Brownie de Chocolate na Air Fryer",
+    "recipeSubtitle": "Delicioso e rápido, assado na air fryer para ficar macio e crocante.",
+    "img": "brownie-de-chocolate-na-air-fryer.webp",
+    "ingredients": [
+      {
+        "group": "Ingredientes",
+        "ingredients": [
+          "100g de chocolate meio amargo",
+          "50g de manteiga",
+          "1/2 xícara de açúcar",
+          "2 ovos",
+          "1/4 xícara de farinha de trigo",
+          "1 pitada de sal",
+          "Opcional: nozes ou castanhas picadas"
+        ]
+      }
+    ],
+    "preparation": [
+      "Derreta o chocolate com a manteiga em banho-maria ou micro-ondas.",
+      "Em uma tigela, bata os ovos com o açúcar até ficar cremoso.",
+      "Adicione o chocolate derretido aos ovos e misture bem.",
+      "Incorpore a farinha e o sal delicadamente.",
+      "Se desejar, acrescente nozes ou castanhas.",
+      "Coloque a massa em uma forma pequena que caiba na air fryer, untada ou forrada com papel manteiga.",
+      "Cozinhe na air fryer a 160°C por 12 a 15 minutos.",
+      "Retire e deixe esfriar um pouco antes de cortar."
+    ],
+    "tips": [
+      "Não cozinhe demais para não perder a textura macia.",
+      "Use chocolate de boa qualidade para melhor sabor.",
+      "Deixe esfriar antes de cortar para não desmanchar."
+    ]
+  },
+  {
+    "id": 7,
+    "slug": "brownie-fitness",
+    "recipeTitle": "Brownie Fitness",
+    "recipeSubtitle": "Uma versão saudável e deliciosa, ideal para quem quer manter a forma.",
+    "img": "brownie-fitness.jpg",
+    "ingredients": [
+      {
+        "group": "Ingredientes",
+        "ingredients": [
+          "2 ovos",
+          "1 banana madura amassada",
+          "2 colheres (sopa) de cacau em pó",
+          "3 colheres (sopa) de aveia em flocos finos",
+          "2 colheres (sopa) de mel ou adoçante natural",
+          "1 colher (chá) de fermento em pó",
+          "Opcional: gotas de chocolate amargo ou castanhas"
+        ]
+      }
+    ],
+    "preparation": [
+      "Preaqueça o forno a 180°C e unte uma forma pequena ou use papel manteiga.",
+      "Em uma tigela, misture a banana amassada, ovos e mel até ficar homogêneo.",
+      "Adicione o cacau, aveia e fermento, misturando bem.",
+      "Se desejar, acrescente gotas de chocolate ou castanhas.",
+      "Despeje a massa na forma e asse por 15 a 20 minutos.",
+      "Deixe esfriar antes de cortar em pedaços."
+    ],
+    "tips": [
+      "Não asse demais para o brownie ficar macio.",
+      "Use bananas bem maduras para maior doçura natural.",
+      "Sirva com frutas ou iogurte para uma versão ainda mais saudável."
+    ]
+  },
+  {
+    "id": 8,
+    "slug": "brownie-super-fácil",
+    "recipeTitle": "Brownie Super Fácil",
+    "recipeSubtitle": "Rápido, prático e delicioso — ideal para qualquer hora do dia.",
+    "img": "brownie-super-facil.jpg",
+    "ingredients": [
+      {
+        "group": "Ingredientes",
+        "ingredients": [
+          "1 ovo",
+          "3 colheres (sopa) de açúcar",
+          "2 colheres (sopa) de chocolate em pó",
+          "2 colheres (sopa) de óleo",
+          "2 colheres (sopa) de farinha de trigo",
+          "Opcional: gotas de chocolate ou castanhas"
+        ]
+      }
+    ],
+    "preparation": [
+      "Em uma tigela, misture o ovo com o açúcar e o óleo até ficar homogêneo.",
+      "Acrescente o chocolate em pó e a farinha, misturando bem.",
+      "Se desejar, adicione gotas de chocolate ou castanhas.",
+      "Despeje a massa em uma forma pequena untada ou use uma caneca grande.",
+      "Leve ao forno preaquecido a 180°C por 12 a 15 minutos, ou ao micro-ondas por 1 minuto e meio.",
+      "Deixe esfriar antes de servir."
+    ],
+    "tips": [
+      "Não cozinhe demais para não ressecar.",
+      "Adicione chocolate extra ou castanhas antes de assar."
+    ]
+  }
+]

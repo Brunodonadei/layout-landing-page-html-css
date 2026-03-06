@@ -1,28 +1,27 @@
-# Uso do Figma no Desenvolvimento Web
+# college-activities-portfolio
 
-Atividade prática de desenvolvimento web com foco no fluxo real de trabalho: prototipação no Figma → codificação em HTML/CSS → publicação no GitHub Pages.
+Portfólio com as atividades práticas desenvolvidas durante a matéria de Programação para Internet.
 
----
+Cada atividade fica em sua própria pasta e é acessível via GitHub Pages.
 
-## Sobre o Projeto
-
-Uma empresa de tecnologia fictícia solicitou a criação de um site institucional simples com duas páginas:
-
-- **Home** — apresentação da empresa
-- **Serviços** — destaque dos principais serviços oferecidos
+🌐 **[Acessar portfólio](https://Brunodonadei.github.io/college-activities-portfolio/)**
 
 ---
 
-## Tecnologias Utilizadas
+## Estrutura do Repositório
 
-- Figma (prototipação)
-- HTML5
-- CSS3
-- GitHub Pages (hospedagem)
+```
+college-activities-portfolio/
+├── index.html         ← página principal do portfólio
+├── style.css
+│
+├── atividade-01-xxx/
+│   ├── index.html
+│   └── style.css
+│
+└── atividade-02-xxx/
+    ├── index.html
+    └── style.css
+```
 
-## Links
-
-|                       | Link                                                                                                                               |
-| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
-| 🎨 Protótipo no Figma | [Acessar protótipo](https://www.figma.com/design/3q6xmZmzPWEVamGEojFKDZ/nexvara---prototipo-atividade?m=auto&t=aCHqE8JRsoohSJph-1) |
-| 🌐 Site publicado     | [Acessar no GitHub Pages](https://brunodonadei.github.io/layout-landing-page-html-css/)                                            |
+---

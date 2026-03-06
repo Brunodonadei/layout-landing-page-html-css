@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Bruno receitas</h1>
+    </header>
+    <main class="container"></main>
+
+    <footer class="site-footer">
+      <p>© 2026 - Bruno Receitas</p>
+    </footer>
+
+    <script type="module">
+      let recipesData = [];
+
+      async function loadRecipes() {
+        const res = await fetch("db/recipes.json");
+        recipesData = await res.json();
+      }
+
+      await loadRecipes();
+
+      const container = document.querySelector(".container");
+
+      container.innerHTML = recipesData
+        .map(
+          (recipe) => `
+                  <a href="./recipesPage/index.html?slug=${recipe.slug}">
+                      <div class="card">
+                          <img src="images/${recipe.img}" class="card-image"/>
+                          <div class="card-description">
+                              <h2>${recipe.recipeTitle}</h2>
+                              <p>${recipe.recipeSubtitle}</p>
+                          </div>
+                      </div>
+                  </a>
+              `,
+        )
+        .join("");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <title>Brownie Super Fácil | Bruno Receitas</title>
+  </head>
+  <body>
+    <header>
+      <a href="../index.html">
+        <h1>Bruno Receitas</h1>
+      </a>
+    </header>
+
+    <main class="recipe-page"></main>
+    <footer class="site-footer">
+      <p>© 2026 - Bruno Receitas</p>
+    </footer>
+
+    <script type="module">
+      async function loadRecipe() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const slug = urlParams.get("slug");
+
+        const res = await fetch("/atividade-receitas/db/recipes.json");
+        const recipes = await res.json();
+
+        const recipe = recipes.find((r) => r.slug === slug);
+        if (!recipe) {
+          document.querySelector("main").innerHTML =
+            "<p>Receita não encontrada!</p>";
+        }
+
+        document.querySelector("title").innerHTML =
+          `${recipe.recipeTitle} | Bruno Receitas`;
+
+        document.querySelector("main").innerHTML = `
+          <div class="recipe-header">
+              <h1 class="recipe-title">${recipe.recipeTitle}</h1>
+              <p class="recipe-subtitle">${recipe.recipeSubtitle}</p>
+          </div>
+
+            <section class="recipe-section">
+            <h2 class="section-title">Ingredientes</h2>
+              ${recipe.ingredients
+                .map(
+                  (group) => `
+                <div class="ingredients-group">
+                  <h3 class="group-title">${group.group}</h3>
+                  <ul class="ingredient-list">
+                    ${group.ingredients.map((ing) => `<li>${ing}</li>`).join("")}
+                  </ul>
+                </div>
+              `,
+                )
+                .join("")}
+            </section>
+
+            <section class="recipe-section">
+              <h2 class="section-title">Modo de Preparo</h2>
+              <ol class="preparation-steps">
+                ${recipe.preparation.map((step) => `<li>${step}</li>`).join("")}
+              </ol>
+            </section>
+
+            <section class="recipe-section">
+              <h2 class="section-title">Dicas</h2>
+              <ul class="tips-list">
+                ${recipe.tips.map((tip) => `<li>${tip}</li>`).join("")}
+              </ul>
+            </section>
+        `;
+      }
+
+      await loadRecipe();
+    </script>
+  </body>
+</html>
