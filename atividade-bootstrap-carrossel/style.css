@@ -46,3 +46,30 @@ section h1 {
   color: #aaa;
   font-style: italic;
 }
+
+header {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 24px 80px 0;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 16px;
+  padding: 0 0 16px;
+}
+
+.navbar span {
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #aaa;
+}
+
+.navbar-toggler-icon {
+  filter: invert(70%);
+  outline: none;
+}
