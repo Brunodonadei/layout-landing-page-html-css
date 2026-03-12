@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Georgia, serif;
+  background-color: #f5f5f5;
+  color: #222;
+}
+
+section {
+  max-width: 680px;
+  margin: 60px auto;
+  padding: 0 80px;
+}
+
+section h1 {
+  font-size: 1.1rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 24px;
+}
+
+#myCarousel {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.carousel-inner {
+  border-radius: 8px;
+}
+
+.carousel-item img {
+  height: 400px;
+  object-fit: cover;
+}
+
+.legenda {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #aaa;
+  font-style: italic;
+}
