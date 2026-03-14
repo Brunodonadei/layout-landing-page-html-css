@@ -1,0 +1,786 @@
+<!doctype html>
+<html
+  lang="pt-BR"
+  data-bs-spy="scroll"
+  data-bs-target="#scrollspy-nav"
+  data-bs-offset="80"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Raízes EAD — Painel</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <button
+            class="btn btn-offcanvas me-2 d-lg-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasMenu"
+            aria-controls="offcanvasMenu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <a class="navbar-brand" href="#">Raízes EAD</a>
+
+          <button
+            class="navbar-toggler d-none d-lg-none"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto align-items-center gap-1">
+              <li class="nav-item">
+                <a class="nav-link" href="#secao-inicio">Início</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#secao-cursos">Cursos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#secao-categorias">Categorias</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#secao-relatorios">Relatórios</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasMenu"
+      aria-labelledby="offcanvasMenuLabel"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasMenuLabel">Raízes EAD</h5>
+        <button
+          type="button"
+          class="btn-close btn-close-white"
+          data-bs-dismiss="offcanvas"
+          aria-label="Fechar"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <nav id="scrollspy-nav">
+          <ul class="nav flex-column gap-1">
+            <li class="nav-item">
+              <a class="nav-link offcanvas-link active" href="#secao-inicio">
+                <span class="nav-icon">🏠</span> Início
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link offcanvas-link" href="#secao-cursos">
+                <span class="nav-icon">📚</span> Cursos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link offcanvas-link" href="#secao-categorias">
+                <span class="nav-icon">🏷️</span> Categorias
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link offcanvas-link" href="#secao-relatorios">
+                <span class="nav-icon">📊</span> Relatórios
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <hr class="offcanvas-divider" />
+        <div class="offcanvas-stats">
+          <p class="stat-label">Total de cursos</p>
+          <p class="stat-value" id="offcanvasTotal">0</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      style="z-index: 9999"
+    >
+      <div
+        id="toastSuccess"
+        class="toast align-items-center text-bg-success border-0"
+        role="alert"
+      >
+        <div class="d-flex">
+          <div class="toast-body" id="toastSuccessMsg">
+            Curso salvo com sucesso!
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+      <div
+        id="toastError"
+        class="toast align-items-center text-bg-danger border-0"
+        role="alert"
+      >
+        <div class="d-flex">
+          <div class="toast-body" id="toastErrorMsg">
+            Erro ao realizar ação.
+          </div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-content">
+      <section id="secao-inicio" class="section-block">
+        <div class="container">
+          <div id="alertArea"></div>
+
+          <div class="carousel-wrapper mb-5">
+            <h2 class="section-title mb-3">Cursos em Destaque</h2>
+            <div
+              id="carouselDestaque"
+              class="carousel slide carousel-fade"
+              data-bs-ride="carousel"
+            >
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselDestaque"
+                  data-bs-slide-to="0"
+                  class="active"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselDestaque"
+                  data-bs-slide-to="1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselDestaque"
+                  data-bs-slide-to="2"
+                ></button>
+              </div>
+              <div class="carousel-inner rounded-4 overflow-hidden">
+                <div class="carousel-item active">
+                  <div class="carousel-slide slide-1">
+                    <div class="carousel-caption-custom">
+                      <span class="slide-tag">Mais Popular</span>
+                      <h3>Permacultura Aplicada</h3>
+                      <p>
+                        Aprenda a cultivar de forma sustentável e regenerativa
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-slide slide-2">
+                    <div class="carousel-caption-custom">
+                      <span class="slide-tag">Novo</span>
+                      <h3>Apicultura Natural</h3>
+                      <p>Do zero à colheita: manejo consciente das abelhas</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="carousel-slide slide-3">
+                    <div class="carousel-caption-custom">
+                      <span class="slide-tag">Em Alta</span>
+                      <h3>Bioconstrução</h3>
+                      <p>Técnicas ancestrais para construções ecológicas</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselDestaque"
+                data-bs-slide="prev"
+              >
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselDestaque"
+                data-bs-slide="next"
+              >
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+
+          <div class="row g-3 mb-5">
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-num" id="statTotal">0</div>
+                <div class="stat-desc">Cursos</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <div class="stat-icon">👥</div>
+                <div class="stat-num">1.248</div>
+                <div class="stat-desc">Alunos</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <div class="stat-icon">🏷️</div>
+                <div class="stat-num" id="statCats">0</div>
+                <div class="stat-desc">Categorias</div>
+              </div>
+            </div>
+            <div class="col-6 col-md-3">
+              <div class="stat-card">
+                <div class="stat-icon">⭐</div>
+                <div class="stat-num">4.8</div>
+                <div class="stat-desc">Avaliação</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="secao-cursos" class="section-block section-alt">
+        <div class="container">
+          <div
+            class="section-header d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4"
+          >
+            <div>
+              <h2 class="section-title mb-1">Gerenciar Cursos</h2>
+              <p class="section-sub">Adicione, edite e visualize seus cursos</p>
+            </div>
+            <div class="d-flex align-items-center gap-2 flex-wrap">
+              <div class="dropdown">
+                <button
+                  class="btn btn-filter dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  id="btnFiltrar"
+                  data-bs-toggle-popover="true"
+                  title="Filtrar por Categoria"
+                  data-bs-content="Use este menu para filtrar os cursos por categoria específica."
+                >
+                  <svg
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    class="me-1"
+                  >
+                    <polygon
+                      points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"
+                    />
+                  </svg>
+                  Filtrar
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end" id="dropdownFiltro">
+                  <li><h6 class="dropdown-header">Categorias</h6></li>
+                  <li>
+                    <a class="dropdown-item active" href="#" data-cat="todos"
+                      >Todos</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-cat="permacultura"
+                      >Permacultura</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-cat="apicultura"
+                      >Apicultura</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-cat="bioconstrucao"
+                      >Bioconstrução</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-cat="agroecologia"
+                      >Agroecologia</a
+                    >
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-cat="fitoterapia"
+                      >Fitoterapia</a
+                    >
+                  </li>
+                </ul>
+              </div>
+
+              <button
+                class="btn btn-add"
+                data-bs-toggle="modal"
+                data-bs-target="#modalCurso"
+                id="btnAdicionar"
+                data-bs-toggle-popover="true"
+                title="Adicionar Curso"
+                data-bs-content="Clique para abrir o formulário e cadastrar um novo curso."
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  class="me-1"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                Adicionar Curso
+              </button>
+            </div>
+          </div>
+
+          <div class="progress-wrapper mb-4">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <span class="progress-label">Meta de cursos cadastrados</span>
+              <span class="progress-pct" id="progressPct">0%</span>
+            </div>
+            <div class="progress" style="height: 10px; border-radius: 99px">
+              <progress
+                class="progress-bar progress-bar-striped progress-bar-animated"
+                id="progressBar"
+                style="width: 0%"
+                aria-valuenow="0"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              ></progress>
+            </div>
+            <p class="progress-meta mt-1" id="progressMeta">
+              0 de 10 cursos cadastrados
+            </p>
+          </div>
+
+          <div id="spinnerArea" class="text-center py-5">
+            <output class="spinner-border spinner-custom">
+              <span class="visually-hidden">Carregando...</span>
+            </output>
+            <p class="mt-3 loading-text">Carregando cursos...</p>
+          </div>
+
+          <div
+            class="row g-4"
+            id="cursosGrid"
+            style="display: none !important"
+          ></div>
+
+          <div
+            id="emptyState"
+            class="empty-state text-center py-5"
+            style="display: none"
+          >
+            <div class="empty-icon">📭</div>
+            <h4>Nenhum curso encontrado</h4>
+            <p>Adicione seu primeiro curso clicando no botão acima.</p>
+          </div>
+
+          <nav id="paginacaoArea" class="mt-4" style="display: none">
+            <ul
+              class="pagination justify-content-center"
+              id="paginacaoLista"
+            ></ul>
+          </nav>
+        </div>
+      </section>
+
+      <section id="secao-categorias" class="section-block">
+        <div class="container">
+          <h2 class="section-title mb-1">Categorias</h2>
+          <p class="section-sub mb-4">
+            Distribuição dos cursos por área temática
+          </p>
+          <div class="row g-3" id="categoriasGrid">
+            <!-- Gerado via JS -->
+          </div>
+        </div>
+      </section>
+
+      <section id="secao-relatorios" class="section-block section-alt">
+        <div class="container">
+          <h2 class="section-title mb-1">Relatórios</h2>
+          <p class="section-sub mb-4">Visão geral da plataforma</p>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="relatorio-card">
+                <h5 class="relatorio-title">Cursos por Nível</h5>
+                <div class="mt-3">
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span>Iniciante</span><span id="relInitiante">0</span>
+                  </div>
+                  <div
+                    class="progress mb-3"
+                    style="height: 8px; border-radius: 99px"
+                  >
+                    <div
+                      class="progress-bar bg-success"
+                      id="barIniciante"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span>Intermediário</span><span id="relInter">0</span>
+                  </div>
+                  <div
+                    class="progress mb-3"
+                    style="height: 8px; border-radius: 99px"
+                  >
+                    <div
+                      class="progress-bar bg-warning"
+                      id="barInter"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                  <div class="mb-2 d-flex justify-content-between">
+                    <span>Avançado</span><span id="relAvanc">0</span>
+                  </div>
+                  <div
+                    class="progress"
+                    style="height: 8px; border-radius: 99px"
+                  >
+                    <div
+                      class="progress-bar bg-danger"
+                      id="barAvanc"
+                      style="width: 0%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="relatorio-card">
+                <h5 class="relatorio-title">Atividade Recente</h5>
+                <ul class="atividade-lista mt-3" id="atividadeLista">
+                  <li class="atividade-item">
+                    <span class="atividade-dot dot-green"></span>
+                    <span>Plataforma iniciada</span>
+                    <span class="atividade-time">agora</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div
+      class="modal fade"
+      id="modalCurso"
+      tabindex="-1"
+      aria-labelledby="modalCursoLabel"
+      aria-hidden="true"
+    >
+      <div
+        class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+      >
+        <div class="modal-content modal-custom">
+          <div class="modal-header modal-header-custom">
+            <h5 class="modal-title" id="modalCursoLabel">
+              Adicionar Novo Curso
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body p-4">
+            <form id="formCurso" novalidate>
+              <input type="hidden" id="cursoEditId" value="" />
+
+              <div class="row g-3">
+                <div class="col-12">
+                  <div class="form-floating">
+                    <input
+                      type="text"
+                      class="form-control form-control-custom"
+                      id="cursoNome"
+                      placeholder="Nome do curso"
+                      required
+                      minlength="3"
+                    />
+                    <label for="cursoNome">Nome do Curso *</label>
+                    <div class="invalid-feedback">
+                      Por favor, insira um nome com ao menos 3 caracteres.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <select
+                      class="form-select form-control-custom"
+                      id="cursoCategoria"
+                      required
+                    >
+                      <option value="" disabled selected></option>
+                      <option value="permacultura">Permacultura</option>
+                      <option value="apicultura">Apicultura</option>
+                      <option value="bioconstrucao">Bioconstrução</option>
+                      <option value="agroecologia">Agroecologia</option>
+                      <option value="fitoterapia">Fitoterapia</option>
+                    </select>
+                    <label for="cursoCategoria">Categoria *</label>
+                    <div class="invalid-feedback">Selecione uma categoria.</div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <select
+                      class="form-select form-control-custom"
+                      id="cursoNivel"
+                      required
+                    >
+                      <option value="" disabled selected></option>
+                      <option value="iniciante">Iniciante</option>
+                      <option value="intermediario">Intermediário</option>
+                      <option value="avancado">Avançado</option>
+                    </select>
+                    <label for="cursoNivel">Nível *</label>
+                    <div class="invalid-feedback">Selecione o nível.</div>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label label-custom">Duração</label>
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      class="form-control form-control-custom"
+                      id="cursoDuracao"
+                      placeholder="Ex: 40"
+                      min="1"
+                      max="500"
+                    />
+                    <span class="input-group-text ig-custom">horas</span>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label label-custom">Preço</label>
+                  <div class="input-group">
+                    <span class="input-group-text ig-custom">R$</span>
+                    <input
+                      type="number"
+                      class="form-control form-control-custom"
+                      id="cursoPreco"
+                      placeholder="0,00"
+                      min="0"
+                      step="0.01"
+                    />
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control form-control-custom"
+                      id="cursoDescricao"
+                      placeholder="Descrição"
+                      style="height: 100px"
+                      required
+                      minlength="10"
+                    ></textarea>
+                    <label for="cursoDescricao">Descrição do Curso *</label>
+                    <div class="invalid-feedback">
+                      Escreva uma descrição com ao menos 10 caracteres.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <label for="cursoTeorica" class="form-label label-custom">
+                    Carga teórica: <strong id="teoricaVal">50</strong>%
+                  </label>
+                  <input
+                    type="range"
+                    class="form-range range-custom"
+                    id="cursoTeorica"
+                    min="0"
+                    max="100"
+                    value="50"
+                  />
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label label-custom"
+                    >Recursos incluídos</label
+                  >
+                  <div class="d-flex flex-wrap gap-3">
+                    <div class="form-check check-custom">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="chkCertificado"
+                        checked
+                      />
+                      <label class="form-check-label" for="chkCertificado"
+                        >Certificado</label
+                      >
+                    </div>
+                    <div class="form-check check-custom">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="chkMaterial"
+                      />
+                      <label class="form-check-label" for="chkMaterial"
+                        >Material PDF</label
+                      >
+                    </div>
+                    <div class="form-check check-custom">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="chkAoVivo"
+                      />
+                      <label class="form-check-label" for="chkAoVivo"
+                        >Aulas ao vivo</label
+                      >
+                    </div>
+                    <div class="form-check check-custom">
+                      <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="chkForum"
+                      />
+                      <label class="form-check-label" for="chkForum"
+                        >Fórum de dúvidas</label
+                      >
+                    </div>
+                  </div>
+                </div>
+
+                <div class="col-12">
+                  <div class="form-check form-switch check-custom">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="cursoDestaque"
+                    />
+                    <label class="form-check-label" for="cursoDestaque"
+                      >Exibir no Carousel de Destaque</label
+                    >
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer modal-footer-custom">
+            <button
+              type="button"
+              class="btn btn-modal-cancel"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-modal-save"
+              id="btnSalvarCurso"
+            >
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                class="me-1"
+              >
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              Salvar Curso
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="modalDeletar" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content modal-custom">
+          <div class="modal-header modal-header-danger">
+            <h5 class="modal-title">Remover Curso</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+            ></button>
+          </div>
+          <div class="modal-body p-4">
+            <p>
+              Tem certeza que deseja remover o curso
+              <strong id="deletarNome"></strong>? Esta ação não pode ser
+              desfeita.
+            </p>
+          </div>
+          <div class="modal-footer modal-footer-custom">
+            <button
+              type="button"
+              class="btn btn-modal-cancel"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="btnConfirmarDeletar"
+            >
+              Remover
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container text-center">
+        <p class="footer-brand">Raízes EAD</p>
+        <p class="footer-sub">Plataforma de Educação à Distância Sustentável</p>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
